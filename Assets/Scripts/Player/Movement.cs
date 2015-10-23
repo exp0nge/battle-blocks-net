@@ -7,13 +7,14 @@ public class Movement : MonoBehaviour {
 
     public string horizontalMovement = "Horizontal"; //used to set the string value for the correct player
     public string verticalMovement = "Vertical";
-    public float playerSpeed = 1f;
-    public float turnSpeed = 1f;
+    public float playerSpeed = 5f;
+    public float turnSpeed = 30f;
 
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
-    
+    public KeyCode dashInput = KeyCode.Return;
+    public float dash = 1;
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour {
     private void Update() {
         movementInput = Input.GetAxis(verticalMovement);
         rotationInput = Input.GetAxis(horizontalMovement);
+        
     }
 
 	//FixedUpdate() is used for physics calculation and runs every other frame
@@ -44,8 +46,22 @@ public class Movement : MonoBehaviour {
     }
 
     private void move() {
-        Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
-        playerRigidbody.MovePosition(movement + playerRigidbody.position);
+        if (Input.GetKeyDown(dashInput)){
+            dash = 5;
+            Vector3 movement;
+            if (movementInput != 0){
+                movement = transform.forward * dash * movementInput;
+            }
+            else {
+                movement = transform.forward * dash * playerSpeed;
+            }
+            playerRigidbody.MovePosition(movement + playerRigidbody.position);
+            dash = 1;
+        }
+        else{
+            Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
+            playerRigidbody.MovePosition(movement + playerRigidbody.position);
+        }
     }
 
     private void turn() {
