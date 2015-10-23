@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour {
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
+    
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
