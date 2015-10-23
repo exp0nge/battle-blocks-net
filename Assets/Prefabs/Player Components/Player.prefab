@@ -31,6 +31,7 @@ GameObject:
   - 54: {fileID: 5481206}
   - 23: {fileID: 2393694}
   - 114: {fileID: 11460622}
+  - 114: {fileID: 11420292}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,6 +165,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11420292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f75e216bd741654fb4a8288a4d84aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
+  shotPosition: {fileID: 408638}
+  shotForce: 1000
+  fireRate: .5
+  shooterKey: 32
 --- !u!114 &11460622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalMovement: Horizontal
   verticalMovement: Vertical
-  playerSpeed: 15
+  playerSpeed: 10
   turnSpeed: 50
 --- !u!1001 &100100000
 Prefab:

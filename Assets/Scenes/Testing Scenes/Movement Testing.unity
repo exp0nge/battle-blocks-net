@@ -197,17 +197,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5481206, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &991082685 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 408638, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-  m_PrefabInternal: {fileID: 552282256}
 --- !u!1 &1057995978
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,28 +341,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470061282}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 14.6099997, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &2047811106 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 130810, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-  m_PrefabInternal: {fileID: 552282256}
---- !u!114 &2047811113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047811106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f75e216bd741654fb4a8288a4d84aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
-  shotPosition: {fileID: 991082685}
-  shotForce: 1000
-  fireRate: .5
-  shooterKey: 32
