@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour {
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
     public KeyCode dashInput = KeyCode.Return;
     public float dash = 1;
+    public bool dashCheck;
+    public float dashCooldown;
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -46,17 +48,21 @@ public class Movement : MonoBehaviour {
     }
 
     private void move() {
-        if (Input.GetKeyDown(dashInput)){
+        //Check if dash key is pressed and dash is off cooldown.
+        if (Input.GetKeyDown(dashInput) && Time.time > dashCooldown){
             dash = 5;
+            dashCooldown = Time.time + 3.0F;
             Vector3 movement;
+            //If player is moving
             if (movementInput != 0){
                 movement = transform.forward * dash * movementInput;
             }
+            //If player is still
             else {
                 movement = transform.forward * dash * playerSpeed;
             }
+            //Update position
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
-            dash = 1;
         }
         else{
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
@@ -68,5 +74,9 @@ public class Movement : MonoBehaviour {
         float turn = turnSpeed * rotationInput * Time.deltaTime * playerSpeed;
         Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         playerRigidbody.MoveRotation(playerRigidbody.rotation * rotation);
+    }
+    
+    public void start(){
+        
     }
 }
