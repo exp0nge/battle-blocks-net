@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Destroysstuff : MonoBehaviour {
+    
     void OnTriggerEnter (Collider c)
     {
         if (c.CompareTag("Block"))
