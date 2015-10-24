@@ -5,7 +5,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour {
 
-    public string horizontalMovement = "Horizontal"; //used to set the string value for the correct player
+    //used to set the string value for the correct player
+    public string horizontalMovement = "Horizontal";
     public string verticalMovement = "Vertical";
     public float playerSpeed = 1f;
     public float turnSpeed = 1f;
@@ -19,19 +20,21 @@ public class Movement : MonoBehaviour {
     }
 
 	private void OnEnable() {
-        //makes sure that on start the kinematic component is turned off
-        playerRigidbody.isKinematic = false;
+        //makes sure that physics does not affect the Rigidbody
+        playerRigidbody.isKinematic = true;
         //reset the values of the inputs
         movementInput = 0f;
         rotationInput = 0f;
     }
 
 	private void OnDisable() {
-        //return the kinematic component to on
+        //makes sure that physics does not affect the Rigidbody
         playerRigidbody.isKinematic = true;
     }
 
+    //Update is called once every frame
     private void Update() {
+        //Store the values of Input.GetAxis
         movementInput = Input.GetAxis(verticalMovement);
         rotationInput = Input.GetAxis(horizontalMovement);
     }
@@ -42,11 +45,13 @@ public class Movement : MonoBehaviour {
         turn();
     }
 
+    //using the Rigidbody to move the body
     private void move() {
         Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
         playerRigidbody.MovePosition(movement + playerRigidbody.position);
     }
 
+    //using the rotationInput to scale how fast a player turns
     private void turn() {
         float turn = turnSpeed * rotationInput * Time.deltaTime;
         Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
