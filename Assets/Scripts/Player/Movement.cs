@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour {
             }
             //If player is still
             else {
-                movement = transform.forward * dash * playerSpeed;
+                movement = transform.forward * dash;
             }
             //Update position
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
