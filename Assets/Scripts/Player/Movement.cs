@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour {
             else {
                 movement = transform.forward * teleport;
             }
-            //Update position
+            //Update position with scale factor
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
         }
         else{
