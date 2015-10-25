@@ -24,8 +24,8 @@ public class Movement : MonoBehaviour {
     }
 
 	private void OnEnable() {
-        //makes sure that physics does not affect the Rigidbody
-        playerRigidbody.isKinematic = true;
+        //makes sure physics affects the rigidbody
+        playerRigidbody.isKinematic = false;
         //reset the values of the inputs
         movementInput = 0f;
         rotationInput = 0f;
@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour {
         //Store the values of Input.GetAxis
         movementInput = Input.GetAxis(verticalMovement);
         rotationInput = Input.GetAxis(horizontalMovement);
-        
+
     }
 
 	//FixedUpdate() is used for physics calculation and runs every other frame
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour {
             //Update position
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
         }
-        else{
+        else {
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
         }
@@ -79,9 +79,5 @@ public class Movement : MonoBehaviour {
         float turn = turnSpeed * rotationInput * Time.deltaTime * playerSpeed;
         Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         playerRigidbody.MoveRotation(playerRigidbody.rotation * rotation);
-    }
-    
-    public void start(){
-        
     }
 }
