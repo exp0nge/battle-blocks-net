@@ -15,9 +15,9 @@ public class Movement : MonoBehaviour {
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
     public KeyCode teleportInput = KeyCode.Return;
-    public float teleport = 1;
+    private float teleport = 1;
     private bool teleportCheck;
-    public float teleportCooldown;
+    private float teleportCooldown;
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();

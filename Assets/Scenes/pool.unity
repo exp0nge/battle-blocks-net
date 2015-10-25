@@ -583,6 +583,10 @@ Prefab:
       propertyPath: teleportCheck
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11460622, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: teleportInput
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0
