@@ -13,10 +13,10 @@ public class Movement : MonoBehaviour {
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
-    public KeyCode dashInput = KeyCode.Return;
-    public float dash = 1;
-    public bool dashCheck;
-    public float dashCooldown;
+    public KeyCode teleportInput = KeyCode.Return;
+    public float teleport = 1;
+    public bool teleportCheck;
+    public float teleportCooldown;
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -48,18 +48,18 @@ public class Movement : MonoBehaviour {
     }
 
     private void move() {
-        //Check if dash key is pressed and dash is off cooldown.
-        if (Input.GetKeyDown(dashInput) && Time.time > dashCooldown){
-            dash = 5;
-            dashCooldown = Time.time + 3.0F;
+        //Check if teleport key is pressed and teleport is off cooldown.
+        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown){
+            teleport = 5;
+            teleportCooldown = Time.time + 3.0F;
             Vector3 movement;
             //If player is moving
             if (movementInput != 0){
-                movement = transform.forward * dash * movementInput;
+                movement = transform.forward * teleport * movementInput;
             }
             //If player is still
             else {
-                movement = transform.forward * dash;
+                movement = transform.forward * teleport;
             }
             //Update position
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
