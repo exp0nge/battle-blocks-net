@@ -8,16 +8,20 @@ public class Movement : MonoBehaviour {
     //used to set the string value for the correct player
     public string horizontalMovement = "Horizontal";
     public string verticalMovement = "Vertical";
+    public KeyCode teleportInput = KeyCode.Return;
+    public KeyCode dashInput = KeyCode.LeftAlt;
     public float playerSpeed = 5f;
     public float turnSpeed = 30f;
+    public float slideForce = 1000f; //Determines how strong the force should be applied to the rigidbody
+    public float slideRate = 5f; //how often the player can slide
 
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
-    public KeyCode teleportInput = KeyCode.Return;
-    private float teleport = 1;
+    private float teleport = 1f;
     private bool teleportCheck;
     private float teleportCooldown;
+    private float dashCooldown;
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -41,7 +45,6 @@ public class Movement : MonoBehaviour {
         //Store the values of Input.GetAxis
         movementInput = Input.GetAxis(verticalMovement);
         rotationInput = Input.GetAxis(horizontalMovement);
-
     }
 
 	//FixedUpdate() is used for physics calculation and runs every other frame
@@ -58,7 +61,7 @@ public class Movement : MonoBehaviour {
             teleportCooldown = Time.time + 3.0F;
             Vector3 movement;
             //If player is moving
-            if (movementInput != 0){
+            if (movementInput != 0) {
                 movement = transform.forward * teleport * movementInput;
             }
             //If player is still
@@ -67,6 +70,11 @@ public class Movement : MonoBehaviour {
             }
             //Update position with scale factor
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
+        }
+        else if (Input.GetKeyUp(dashInput) && Time.time > dashCooldown)
+        {
+            dashCooldown = Time.time + slideRate;
+            dash();
         }
         else {
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
@@ -79,5 +87,9 @@ public class Movement : MonoBehaviour {
         float turn = turnSpeed * rotationInput * Time.deltaTime * playerSpeed;
         Quaternion rotation = Quaternion.Euler(0f, turn, 0f);
         playerRigidbody.MoveRotation(playerRigidbody.rotation * rotation);
+    }
+
+    private void dash() {
+        GetComponentInParent<Rigidbody>().AddForce(gameObject.transform.forward * slideForce);
     }
 }
