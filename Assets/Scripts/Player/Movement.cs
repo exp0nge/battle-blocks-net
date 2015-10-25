@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour {
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
     public KeyCode teleportInput = KeyCode.Return;
     public float teleport = 1;
-    public bool teleportCheck;
+    private bool teleportCheck;
     public float teleportCooldown;
 
     void Awake() {
@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour {
     //using the Rigidbody to move the body
     private void move() {
         //Check if teleport key is pressed and teleport is off cooldown.
-        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown && (transform.forward.y > 0)){
+        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown && (transform.forward.y >= 0)){
             teleport = 5;
             teleportCooldown = Time.time + 3.0F;
             Vector3 movement;
