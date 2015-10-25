@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour {
 
     private void move() {
         //Check if teleport key is pressed and teleport is off cooldown.
-        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown){
+        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown && (transform.forward.y > 0)){
             teleport = 5;
             teleportCooldown = Time.time + 3.0F;
             Vector3 movement;
