@@ -8,32 +8,17 @@ public class Health : MonoBehaviour {
 	public void damageTaken(float damage)
 	{
 		health -= damage;
+		if(health <= 0)
+			Destroy(gameObject);
 	}
 
-	void OnTriggerEnter(Collider c) {
-		if(c.CompareTag("Block"))
+	void OnTriggerEnter(Collider c) {//c is whatever is hitting the gameObject the script is attatched to
+		//Debug.Log(c.gameObject);
+		if(c.CompareTag("Projectile"))
 		{
-			if (health > 0)
-			{
-				damageTaken(25f);
-				Destroy(gameObject);
-			}
-			else if (health == 0)
-			{
-				Destroy(c.gameObject);
-				Destroy(gameObject);
-			}
+			damageTaken(33f);
+			Destroy(c.gameObject);
 		}
-		Destroy(gameObject);
-	}
-
-	// Use this for initialization
-	void Start () {
-
-	}
-
-	// Update is called once per frame
-	void Update () {
-
+		//Debug.Log(health);
 	}
 }
