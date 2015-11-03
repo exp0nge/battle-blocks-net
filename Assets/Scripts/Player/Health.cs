@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
 		if(health <= 0)
 			Destroy(gameObject);
 	}
-
+	/*
 	void OnTriggerEnter(Collider c) {//c is whatever is hitting the gameObject the script is attatched to
 		//Debug.Log(c.gameObject);
 		if(c.CompareTag("Projectile"))
@@ -21,4 +21,5 @@ public class Health : MonoBehaviour {
 		}
 		//Debug.Log(health);
 	}
+	*/
 }
