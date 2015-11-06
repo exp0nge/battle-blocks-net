@@ -23,6 +23,9 @@ public class Movement : MonoBehaviour {
     private float teleportCooldown;
     private float dashCooldown;
 
+    ParticleSystem explodesystem;
+
+
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
     }
@@ -63,10 +66,13 @@ public class Movement : MonoBehaviour {
             //If player is moving
             if (movementInput != 0) {
                 movement = transform.forward * teleport * movementInput;
+                explodesystem.transform.position = movement; // change position of particle system to player position
             }
             //If player is still
             else {
                 movement = transform.forward * teleport;
+                explodesystem.transform.position = movement;
+
             }
             //Update position with scale factor
             playerRigidbody.MovePosition(movement + playerRigidbody.position);

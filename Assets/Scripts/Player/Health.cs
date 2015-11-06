@@ -9,7 +9,12 @@ public class Health : MonoBehaviour {
 	{
 		health -= damage;
 	}
-
+    void Explode() 
+        // particle system for when enemy is destroyed
+    {
+        var explode = GetComponent<ParticleSystem>();
+        explode.Play();
+    }
 	void OnTriggerEnter(Collider c) {
 		if(c.CompareTag("Block"))
 		{
@@ -20,7 +25,8 @@ public class Health : MonoBehaviour {
 			}
 			else if (health == 0)
 			{
-				Destroy(c.gameObject);
+                Explode();
+                Destroy(c.gameObject);
 				Destroy(gameObject);
 			}
 		}

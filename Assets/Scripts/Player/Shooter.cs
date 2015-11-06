@@ -11,12 +11,11 @@ public class Shooter : MonoBehaviour {
 
     private float nextInterval;
 
-	// Update is called once per frame
+	// Update is called once per frame 
 	void Update () {
 		//Player will shoot if input is true and if the time interval is greater than the set interval
-		if (Input.GetKey(shooterKey) && Time.time > nextInterval)
-		{
-			nextInterval = Time.time + fireRate;
+   		{
+			nextInterval = Time.time + fireRate; 
 			Rigidbody shot = Instantiate(projectile, shotPosition.position, shotPosition.rotation) as Rigidbody;
 			shot.AddForce(shotPosition.forward * shotForce);
 		}
