@@ -66,7 +66,7 @@ public class Movement : MonoBehaviour {
             //If player is moving
             if (movementInput != 0) {
                 movement = transform.forward * teleport * movementInput;
-                explodesystem.transform.position = movement; // change position of particle system to player position
+                explodesystem.transform.position = movement; // change position of particle system to player position .
             }
             //If player is still
             else {
