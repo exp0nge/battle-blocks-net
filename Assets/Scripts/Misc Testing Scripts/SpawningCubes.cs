@@ -10,24 +10,28 @@ public class SpawningCubes : MonoBehaviour {
 	public Vector3 center;
 		
 	public Vector3 radius;
+	public float spawnCooldown;
+	public float spawnRate;
 
 	// Use this for initialization
 	void Start () {
+		spawnRate = 20;
 		plane = GetComponent<MeshRenderer>();
 		Debug.Log(plane.bounds);
-		
 		center = plane.bounds.center;
-		
-		radius = plane.bounds.extents - new Vector3(1,0,1);
+		radius = plane.bounds.extents - new Vector3(2,0,2);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Time.time > spawnCooldown)
 		{
-			Vector3 position = new Vector3(Random.Range(-radius.x, radius.x), 3, Random.Range(-radius.z, radius.z));
-			Instantiate(powerupRB, position, new Quaternion(3,2,4,1));
+			spawnCooldown = Time.time + 20;
+			for (int i = 0; i < 3; i++){
+				Vector3 position = new Vector3(Random.Range(-radius.x, radius.x), 3, Random.Range(-radius.z, radius.z));
+				Instantiate(powerupRB, position, Quaternion.identity);
+			}
 		}
 	}
 }
