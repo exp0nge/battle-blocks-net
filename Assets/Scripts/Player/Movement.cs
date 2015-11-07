@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour {
     public float turnSpeed = 30f;
     public float slideForce = 1000f; //Determines how strong the force should be applied to the rigidbody
     public float slideRate = 5f; //how often the player can slide
-    public ParticleSystem explodeSystem;
+    //public ParticleSystem explodeSystem;
 
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
@@ -65,12 +65,12 @@ public class Movement : MonoBehaviour {
             //If player is moving
             if (movementInput != 0) {
                 movement = transform.forward * teleport * movementInput;
-                explodeSystem.transform.position = movement; // change position of particle system to player position .
+                //explodeSystem.transform.position = movement; // change position of particle system to player position .
             }
             //If player is still
             else {
                 movement = transform.forward * teleport;
-                explodeSystem.transform.position = movement;
+                //explodeSystem.transform.position = movement;
 
             }
             //Update position with scale factor
