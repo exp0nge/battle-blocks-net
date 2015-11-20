@@ -15,7 +15,8 @@ public class Movement : MonoBehaviour {
     public float slideForce = 1000f; //Determines how strong the force should be applied to the rigidbody
     public float slideRate = 5f; //how often the player can slide
     //public ParticleSystem explodeSystem;
-
+    public ParticleSystem moveparticles;
+    public ParticleSystem dashparticles;
     private Rigidbody playerRigidbody;
     private float movementInput; //stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; //Stores the input values from Input.GetAxis("Horizontal")
@@ -27,6 +28,7 @@ public class Movement : MonoBehaviour {
 
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
+
     }
 
 	private void OnEnable() {
@@ -70,6 +72,7 @@ public class Movement : MonoBehaviour {
             //If player is still
             else {
                 movement = transform.forward * teleport;
+                //moveparticles.Pause();
                 //explodeSystem.transform.position = movement;
 
             }
@@ -80,10 +83,12 @@ public class Movement : MonoBehaviour {
         {
             dashCooldown = Time.time + slideRate;
             dash();
+            //dashparticles.Play();
         }
         else {
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
+            //moveparticles.Play();
         }
     }
 
