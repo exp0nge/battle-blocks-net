@@ -128,4 +128,5 @@ public class Movement : MonoBehaviour {
         return currentState;
     }
     #endregion
+
 }

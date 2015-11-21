@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a4418c3855a7d4fb4f0482d0e839a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mstate: 0
   moveparticles: {fileID: 1867799259}
   dashparticles: {fileID: 1255961488}
   dashInput: 308
@@ -597,7 +598,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408352, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19871188, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
       propertyPath: playOnAwake
