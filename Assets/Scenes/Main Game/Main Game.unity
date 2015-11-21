@@ -225,6 +225,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 125144, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0
@@ -309,28 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveparticles: {fileID: 1867799259}
   dashparticles: {fileID: 1255961488}
-  dashInput: 308
-  left: 276
-  right: 275
-  forward: 273
-  back: 274
---- !u!1 &1255961484 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 113412, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
-  m_PrefabInternal: {fileID: 1470790084}
---- !u!114 &1255961486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1255961484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28a4418c3855a7d4fb4f0482d0e839a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveparticles: {fileID: 0}
-  dashparticles: {fileID: 0}
   dashInput: 308
   left: 276
   right: 275
@@ -440,7 +422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446154, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0700000003
+      value: .0699999928
       objectReference: {fileID: 0}
     - target: {fileID: 446154, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -464,15 +446,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446154, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19819782, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
-      propertyPath: lengthInSec
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19819782, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
-      propertyPath: playOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96d9f0e36b697a94cb5f2e42d093831c, type: 2}
@@ -623,11 +597,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408352, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19871188, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408352, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .149999291
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 881e686eca0a45049a7cd39eee945dd5, type: 2}
