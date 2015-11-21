@@ -7,7 +7,7 @@ using System.Collections;
 /// This is generally used for locks and if you only want a
 /// single thing to play.
 /// </summary>
-public enum MovementStates { isMoving, isDashing, isTeleporting };
+public enum MovementStates { isStill, isMoving, isDashing, isTeleporting };
 
 //Makes sure that the object has the right component
 [RequireComponent(typeof(Rigidbody))]
@@ -96,13 +96,18 @@ public class Movement : MonoBehaviour {
             currentState = MovementStates.isDashing;
             Debug.Log("Movement State: " + currentState);
         }
-        else {
+        else if ( movementInput != 0) {
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
             // Sets the currentState to isMoving
             currentState = MovementStates.isMoving;
             Debug.Log("Movement State: " + currentState);
         }
+        else {
+            currentState = MovementStates.isStill;
+            Debug.Log("Movement State: " + currentState);
+        }
+        
     }
 
     //using the rotationInput to scale how fast a player turns
@@ -127,6 +132,7 @@ public class Movement : MonoBehaviour {
     {
         return currentState;
     }
+
     #endregion
 
 }

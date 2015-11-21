@@ -16,7 +16,6 @@ public class Particles : MonoBehaviour {
     /// </summary>
     void Awake()
     { 
-        // particle = GetComponentsInChildren<ParticleSystem>();
     }
     void Playtheparticles()
     {
@@ -25,7 +24,7 @@ public class Particles : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //if (Input.GetKeyDown(left) || Input.GetKeyDown(right) || Input.GetKeyDown(forward) || Input.GetKeyDown(back))
-       
+
 
     }
 
@@ -36,16 +35,14 @@ public class Particles : MonoBehaviour {
         {
             moveparticles.Play();
         }
-        if (mstate == MovementStates.isDashing)
+        else if (mstate == MovementStates.isDashing)
         {
             dashparticles.Play();
         }
-        else
+        else if (mstate == MovementStates.isStill)
         {
             moveparticles.Pause();
         }
-       
-
     }
 
 }
