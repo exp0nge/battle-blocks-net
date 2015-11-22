@@ -17,8 +17,9 @@ public class Health : MonoBehaviour {
 		health -= damage;
         if (health <= 0)
         {
-            Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0));//, transform.rotation);
+            Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0)); // instantiates and plays Explode 
             Destroy(gameObject);
+            Destroy(deathEffect);
         }
 	}
 }

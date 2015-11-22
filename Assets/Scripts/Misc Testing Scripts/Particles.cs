@@ -17,7 +17,6 @@ public class Particles : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //if (Input.GetKeyDown(left) || Input.GetKeyDown(right) || Input.GetKeyDown(forward) || Input.GetKeyDown(back))
     }
 
     void Update ()
@@ -32,7 +31,7 @@ public class Particles : MonoBehaviour {
             particle[1].Play();
             //dashparticles.Play();
         }
-        else// (mstate == MovementStates.isStill)
+        else if (mstate == MovementStates.isStill)
         {
             particle[0].Pause();
             //moveparticles.Pause();
