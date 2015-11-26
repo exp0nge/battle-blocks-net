@@ -29,12 +29,14 @@ public class Movement : MonoBehaviour {
     private float teleportCooldown;
     private float dashCooldown;
 
+
     // Create a reference to the enum states
     private MovementStates currentState;
 
     #region Unity Boot Methods
     void Awake() {
         playerRigidbody = GetComponent<Rigidbody>();
+        //teleportfx = GetComponent<ParticleSystem>();
     }
 
 	private void OnEnable() {

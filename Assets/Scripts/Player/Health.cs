@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
     public ParticleSystem deathEffect;
-    public ParticleSystem hitEffect;
+    public ParticleSystem[] particle;
+    //private Vector3 particleLocation;
+    //public Transform projectile;
 
 	public float health = 100f;
 
@@ -12,9 +14,22 @@ public class Health : MonoBehaviour {
     /// </summary>
     /// <param name="damage"></param>
     ///
+    void Awake() {
+        particle = GetComponentsInChildren<ParticleSystem>();
+    }
+
+    //void OnTriggerEnter(Collider projectile)
+    //{
+    //    if (projectile.CompareTag("Projectile"){
+
+    //        //transform.rotation = Quaternion.FromToRotation(projectile.);
+            
+    //}
+
     public void takeDamage(float damage)
 	{
 		health -= damage;
+        particle[2].Play();
         if (health <= 0)
         {
             Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0)); // instantiates and plays Explode 
