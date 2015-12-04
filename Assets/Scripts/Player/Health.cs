@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
     public ParticleSystem deathEffect;
-    public ParticleSystem[] particle;
+    //public ParticleSystem takeHitEffect;
     //private Vector3 particleLocation;
     //public Transform projectile;
-
 	public float health = 100f;
+    //public ParticleSystem takeHit;
 
     /// <summary>
     /// Performs calculation on object health if health > 0
@@ -15,7 +15,7 @@ public class Health : MonoBehaviour {
     /// <param name="damage"></param>
     ///
     void Awake() {
-        particle = GetComponentsInChildren<ParticleSystem>();
+        //particle = GetComponentsInChildren<ParticleSystem>();
     }
 
     //void OnTriggerEnter(Collider projectile)
@@ -29,7 +29,8 @@ public class Health : MonoBehaviour {
     public void takeDamage(float damage)
 	{
 		health -= damage;
-        particle[2].Play();
+        //takeHitEffect.Play();
+        //particle[2].Play();
         if (health <= 0)
         {
             Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0)); // instantiates and plays Explode 

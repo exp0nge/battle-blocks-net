@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour {
 
 
     // Create a reference to the enum states
-    private MovementStates currentState;
+    public MovementStates currentState;
 
     #region Unity Boot Methods
     void Awake() {
