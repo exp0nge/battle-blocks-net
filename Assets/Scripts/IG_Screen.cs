@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IG_Screen : UI_Screen {
+public class IGscreen: UI_Screen {
     public float health;
     public string hpBar = "HP_Bar";
-    public string gameOver = "Gameover";
+    //public string gameOver = "Gameover";
     // Use this for initialization
     protected override void Start()
     {
@@ -22,10 +22,8 @@ public class IG_Screen : UI_Screen {
             SetImageColor(hpBar, Color.yellow);
         else if (health > 0 && health < 25)
             SetImageColor(hpBar, Color.red);
-        else if (health <= 0)
-            SetText(gameOver,"U lost nub");
-
-
+        //else if (health <= 0)
+        //    SetText(gameOver,"U lost nub");
 	
 	}
 }

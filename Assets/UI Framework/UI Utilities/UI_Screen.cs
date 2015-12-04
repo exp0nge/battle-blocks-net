@@ -72,7 +72,7 @@ public class UI_Screen : MonoBehaviour {
             imageDict[imageName].fillAmount = fillValue;
         }
         else {
-            Debug.LogError("Image not in dictionary");
+            Debug.LogError(imageName+"Image not in dictionary");
         }
     }
 
