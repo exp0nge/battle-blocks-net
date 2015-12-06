@@ -11,20 +11,15 @@ public class HUD_Screen : UI_Screen {
     {
         base.Start();
     }
-    //void Awake()
-    //{
-    //    playerRigidBody = GetComponent<Rigidbody>();
-    //}
-    // Update is called once per frame
+ 
     void Update()
     {
-        
-            //health = (playerRigidBody.GetComponent<Health>().health) / 100;
             health = playerHealth.health / 100f;
-            //fillHealth = health / 100;
-            //SetImageFill(hpBar, health);
+     
             if (health >= .7f)
             {
+                if (health > 1f)
+                    health = 1f;
                 SetImageFill(hpBar, health);
                 SetImageColor(hpBar, Color.green);
             }

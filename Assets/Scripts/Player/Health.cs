@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
     public ParticleSystem deathEffect;
+    public GameObject endScreen;
     //public ParticleSystem takeHitEffect;
     //private Vector3 particleLocation;
     //public Transform projectile;
@@ -16,6 +17,7 @@ public class Health : MonoBehaviour {
     ///
     void Awake() {
         //particle = GetComponentsInChildren<ParticleSystem>();
+        endScreen = GetComponent<GameObject>();
     }
 
 
@@ -28,6 +30,7 @@ public class Health : MonoBehaviour {
             Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0)); // instantiates and plays Explode 
             Destroy(gameObject);
             Destroy(deathEffect);
+            endScreen.SetActive(true);  
         }
 	}
 }

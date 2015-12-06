@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class EndgameScreen : UI_Screen {
-    //public Rigidbody playerRigidBody;
     public float health;
     public Health playerHealth;
     public string gameOver = "Gameover";
@@ -11,15 +10,13 @@ public class EndgameScreen : UI_Screen {
     {
         base.Start();
     }
-    //void Awake()
-    //{
-    //    playerRigidBody = GetComponent<Rigidbody>();
-    //}
-    // Update is called once per frame
+    
     void Update () {
         health = playerHealth.health / 100f;
         if (health <= 0f)
         {
+            if (health < 0f)
+                health = 0;
             OpenThisScreen();
             SetText(gameOver, "U lost nub");
         }
