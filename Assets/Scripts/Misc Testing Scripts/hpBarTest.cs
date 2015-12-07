@@ -8,12 +8,12 @@ public class hpBarTest : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	if (Input.GetKeyDown(reduceHealth))
+	if (Input.GetKeyDown(reduceHealth)) // reduces player health by 20 everytime A is pressed
         {
-            playerHealth.health -= 20;
+            playerHealth.takeDamage(20f);
         }
 	}
 }

@@ -15,10 +15,10 @@ public class EndgameScreen : UI_Screen {
         health = playerHealth.health / 100f;
         if (health <= 0f)
         {
-            if (health < 0f)
-                health = 0;
-            OpenThisScreen();
-            SetText(gameOver, "U lost nub");
+            if (health < 0f) {
+                health = 0f;
+            }
+            SetText(gameOver, "U lost scrub");
         }
     }
 }

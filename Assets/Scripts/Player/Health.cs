@@ -15,22 +15,15 @@ public class Health : MonoBehaviour {
     /// </summary>
     /// <param name="damage"></param>
     ///
-    void Awake() {
-        //particle = GetComponentsInChildren<ParticleSystem>();
-        endScreen = GetComponent<GameObject>();
-    }
-
-
     public void takeDamage(float damage)
 	{
 		health -= damage;
 
-        if (health <= 0)
+        if (health <= 0) 
         {
             Instantiate(deathEffect, transform.position , Quaternion.Euler(270,0,0)); // instantiates and plays Explode 
             Destroy(gameObject);
-            Destroy(deathEffect);
-            endScreen.SetActive(true);  
+            endScreen.SetActive(true);  //opens up endscreen
         }
 	}
 }

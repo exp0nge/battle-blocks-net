@@ -12,6 +12,9 @@ public class HUD_Screen : UI_Screen {
         base.Start();
     }
  
+    /// <summary>
+    /// sets HUD to fill of current health and alters the color at different health ranges 
+    /// </summary>
     void Update()
     {
             health = playerHealth.health / 100f;
