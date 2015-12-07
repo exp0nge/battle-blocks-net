@@ -7,12 +7,6 @@ public class Health : MonoBehaviour {
     public ParticleSystem deathEffect;
     public Image healthHUD;
 
-    #region Colors
-    public Color threeQuartersHealthColor;
-    public Color halfHealthColor;
-    public Color criticalHealthColor; 
-    #endregion
-
     // Reference to the public field, health
     private float currentHealth;
 

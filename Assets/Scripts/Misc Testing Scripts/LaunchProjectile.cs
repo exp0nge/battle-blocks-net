@@ -24,6 +24,7 @@ public class LaunchProjectile : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
+        // Sets the firing method to Unity's Axes controller
         fireButton = "Fire" + playerNumber;
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
@@ -50,6 +51,10 @@ public class LaunchProjectile : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// Instantiates a Rigidbody prefab and uses the physics engine to launch
+    /// the projectile.
+    /// </summary>
     private void Shoot() {
         hasFired = true;
         Rigidbody shot = Instantiate(projectile, shotTransform.position, shotTransform.rotation) as Rigidbody;
