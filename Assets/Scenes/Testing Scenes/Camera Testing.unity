@@ -295,6 +295,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 548789552}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!4 &946030708 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 485438, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
+  m_PrefabInternal: {fileID: 1755584797}
 --- !u!1 &1057995978
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +484,48 @@ Transform:
   - {fileID: 197087018}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1001 &1237615293
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450352, guid: be438a043fc56504da099c6928f91d78, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: be438a043fc56504da099c6928f91d78, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1238851455
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +759,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 737943352}
   m_RootOrder: 2
+--- !u!1 &1664188589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1664188591}
+  - 114: {fileID: 1664188590}
+  m_Layer: 0
+  m_Name: Particle Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1664188590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664188589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2172cf62b1a51cd42a8352946b14c4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfParticles: 10
+  particleEffect: {fileID: 19809170, guid: 19101e13c5b45814e92d86a7e10dfb52, type: 2}
+--- !u!4 &1664188591
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1664188589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 946030708}
+  m_RootOrder: 1
 --- !u!1001 &1665542964
 Prefab:
   m_ObjectHideFlags: 0
@@ -850,9 +937,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485438, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 109122, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170976, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
