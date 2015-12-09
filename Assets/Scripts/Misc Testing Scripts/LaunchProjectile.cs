@@ -1,11 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LaunchProjectile : MonoBehaviour {
+public class LaunchProjectile : ShooterTemplate {
 
-    public int playerNumber = 1;
-    public Rigidbody projectile;
-    public Transform shotTransform;
     public Slider aimSlider;
     public float minLaunchForce = 15f;
     public float maxLaunchForce = 30f;
@@ -23,14 +20,14 @@ public class LaunchProjectile : MonoBehaviour {
 
 
 	// Use this for initialization
-	private void Start () {
+	protected override void Start () {
         // Sets the firing method to Unity's Axes controller
         fireButton = "Fire" + playerNumber;
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
 	
 	// Update is called once per frame
-	private void Update () {
+	protected override void Update () {
 
         aimSlider.value = minLaunchForce;
 

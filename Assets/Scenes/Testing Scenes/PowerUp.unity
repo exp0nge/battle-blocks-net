@@ -85,10 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &181667986 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 409098, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-  m_PrefabInternal: {fileID: 1665542964}
 --- !u!1 &197087014
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,8 +545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f75e216bd741654fb4a8288a4d84aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 1
   projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
-  shotPosition: {fileID: 181667986}
+  shotTransform: {fileID: 0}
   shotForce: 1000
   fireRate: .5
   shooterKey: 32
