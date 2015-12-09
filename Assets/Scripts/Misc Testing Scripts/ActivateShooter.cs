@@ -9,6 +9,7 @@ public class ActivateShooter : MonoBehaviour {
     // this will allow for various kinds of maps.
 
     public GameObject player;
+    public float timer = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +23,16 @@ public class ActivateShooter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            player.GetComponent<Shooter>().enabled = !player.GetComponent<Shooter>().enabled;
-            player.GetComponent<LaunchProjectile>().enabled = !player.GetComponent<Shooter>().enabled;
+            player.GetComponent<LaunchProjectile>().enabled = !player.GetComponent<LaunchProjectile>().enabled;
+            player.GetComponent<BurstFire>().enabled = !player.GetComponent<BurstFire>().enabled;
+            StartCoroutine(resetComponents());
         }
+    }
+
+    IEnumerator resetComponents() {
+        yield return new WaitForSeconds(timer);
+        player.GetComponent<LaunchProjectile>().enabled = !player.GetComponent<LaunchProjectile>().enabled;
+        player.GetComponent<BurstFire>().enabled = !player.GetComponent<BurstFire>().enabled;
+        Debug.Log("Couroutine Ended");
     }
 }

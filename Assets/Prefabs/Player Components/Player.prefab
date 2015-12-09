@@ -81,8 +81,8 @@ GameObject:
   - 23: {fileID: 2360886}
   - 114: {fileID: 11464226}
   - 114: {fileID: 11473170}
-  - 114: {fileID: 11402120}
   - 114: {fileID: 11442850}
+  - 114: {fileID: 11490198}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -401,24 +401,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11402120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34cd41ef0f8e494f9269abf1f424257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumber: 1
-  projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
-  shotTransform: {fileID: 409098}
-  aimSlider: {fileID: 11405342}
-  minLaunchForce: 15
-  maxLaunchForce: 30
-  maxChargeTime: .75
 --- !u!114 &11405342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -605,6 +587,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11490198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34cd41ef0f8e494f9269abf1f424257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 1
+  projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
+  shotTransform: {fileID: 409098}
+  aimSlider: {fileID: 11405342}
+  minLaunchForce: 15
+  maxLaunchForce: 30
+  maxChargeTime: .75
 --- !u!198 &19813552
 ParticleSystem:
   m_ObjectHideFlags: 1

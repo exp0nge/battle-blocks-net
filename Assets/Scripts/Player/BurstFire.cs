@@ -28,6 +28,7 @@ public class BurstFire : ShooterTemplate {
     IEnumerator burst() {
         for (int i = 0; i < burstCount; i++) {
             Rigidbody shot = Instantiate(projectile, shotTransform.position, shotTransform.rotation) as Rigidbody;
+            shot.useGravity = false;
             shot.AddForce(shotTransform.forward * shotForce);
             shotCount--;
             yield return new WaitForSeconds(burstRate);
