@@ -18,6 +18,7 @@ public class Shooter : MonoBehaviour {
    		{
 			nextInterval = Time.time + fireRate;
 			Rigidbody shot = Instantiate(projectile, shotPosition.position, shotPosition.rotation) as Rigidbody;
+            shot.useGravity = false;
 			shot.AddForce(shotPosition.forward * shotForce);
 		}
 	}
