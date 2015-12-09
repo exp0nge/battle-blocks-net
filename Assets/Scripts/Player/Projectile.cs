@@ -4,13 +4,15 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour {
 
-    public float damage = 20f; //Damage the projectile does.
+    // Amount of Damage a particle does
+    public float damage = 20f;
 
-    private ParticleSystem damageParticles;
+    // Public reference to the particle
+    public ParticleSystem damageParticles;
+    private ParticleSystem particle;
 
     private void Awake() {
-        // damageParticles = GetComponentInChildren<ParticleSystem>();
-        // Debug.Log(damageParticles.name);
+
     }
 
     /// <summary>
@@ -24,6 +26,9 @@ public class Projectile : MonoBehaviour {
         else if (other.CompareTag("Obstacle")) {
             Destroy(gameObject);
         }
+        particle = Instantiate(damageParticles, transform.position, Quaternion.Euler(0, 180, 0)) as ParticleSystem;
+        particle.Play();
+        Destroy(gameObject);
     }
    
 }

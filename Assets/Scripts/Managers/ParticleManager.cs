@@ -6,7 +6,8 @@ public class ParticleManager : MonoBehaviour {
     public int numberOfParticles = 10;
     public ParticleSystem particleEffect;
 
-    private ParticleSystem[] particles;
+    private ParticleSystem[] allParticles;
+    private ParticleSystem[] damageParticles;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +15,11 @@ public class ParticleManager : MonoBehaviour {
             Instantiate(particleEffect, Vector3.zero, Quaternion.identity);
         }
 
-        particles = FindObjectsOfType<ParticleSystem>();
+        allParticles = FindObjectsOfType<ParticleSystem>();
 
-        for (int i = 0; i < particles.Length; i++) {
-            if (particles[i].name == "Take hit(Clone)") {
-
+        for (int i = 0; i < allParticles.Length; i++) {
+            if (allParticles[i].name == "Take hit(Clone)") {
+                damageParticles[i] = allParticles[i];
             }
         }
 	}
