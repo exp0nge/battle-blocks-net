@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ShooterTemplate : MonoBehaviour {
@@ -7,13 +7,15 @@ public class ShooterTemplate : MonoBehaviour {
     public Rigidbody projectile;
     public Transform shotTransform;
 
+    protected string fireButton;
+
 	// Use this for initialization
 	protected virtual void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	protected virtual void Update () {
+        fireButton = "Fire" + playerNumber;
+    }
+
+    // Update is called once per frame
+    protected virtual void Update () {
 	
 	}
 }

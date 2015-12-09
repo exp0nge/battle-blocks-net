@@ -8,7 +8,6 @@ public class LaunchProjectile : ShooterTemplate {
     public float maxLaunchForce = 30f;
     public float maxChargeTime = 0.75f;
 
-    private string fireButton;
     private float currentLaunchForce;
     private float chargeSpeed;
     private bool hasFired;
@@ -21,8 +20,7 @@ public class LaunchProjectile : ShooterTemplate {
 
 	// Use this for initialization
 	protected override void Start () {
-        // Sets the firing method to Unity's Axes controller
-        fireButton = "Fire" + playerNumber;
+        base.Start();
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
 	}
 	
