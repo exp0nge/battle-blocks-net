@@ -160,6 +160,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1209290004}
   m_RootOrder: 1
+--- !u!4 &292755374 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 409098, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+  m_PrefabInternal: {fileID: 1665542964}
 --- !u!1 &485446439
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,17 +544,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1235956560}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f75e216bd741654fb4a8288a4d84aff, type: 3}
+  m_Script: {fileID: 11500000, guid: f34cd41ef0f8e494f9269abf1f424257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
   projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
-  shotTransform: {fileID: 0}
-  shotForce: 1000
-  fireRate: .5
-  shooterKey: 32
+  shotTransform: {fileID: 292755374}
+  aimSlider: {fileID: 1878952870}
+  minLaunchForce: 15
+  maxLaunchForce: 30
+  maxChargeTime: .75
 --- !u!1 &1238851455
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +877,8 @@ Prefab:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11402120, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1754002493
@@ -975,3 +981,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1878952870 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11405342, guid: 8799c08914c84ae4f8710f161be71700,
+    type: 2}
+  m_PrefabInternal: {fileID: 1665542964}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
