@@ -18,4 +18,8 @@ public class ShooterTemplate : MonoBehaviour {
     protected virtual void Update () {
 	
 	}
+
+    public virtual void activateComponent() {
+
+    }
 }

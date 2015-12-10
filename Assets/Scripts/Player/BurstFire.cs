@@ -18,12 +18,22 @@ public class BurstFire : ShooterTemplate {
 
     protected override void Update () 
 	{
-		if (Input.GetButtonUp(fireButton) && Time.time > nextInterval && shotCount > 0) 
-		{
+		if (Input.GetButtonUp(fireButton) && Time.time > nextInterval && shotCount > 0) {
 			nextInterval = Time.time + fireRate;
 			StartCoroutine(burst ());
 		}
+        if (shotCount <= 0) {
+            GetComponent<LaunchProjectile>().enabled = !GetComponent<LaunchProjectile>().enabled;
+            GetComponent<BurstFire>().enabled = !GetComponent<BurstFire>().enabled;
+        }
+
 	}
+
+    public override void activateComponent() {
+        base.activateComponent();
+        GetComponent<BurstFire>().enabled = !GetComponent<BurstFire>().enabled;
+        GetComponent<LaunchProjectile>().enabled = !GetComponent<LaunchProjectile>().enabled;
+    }
 
     IEnumerator burst() {
         for (int i = 0; i < burstCount; i++) {

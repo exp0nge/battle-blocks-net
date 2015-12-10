@@ -24,23 +24,11 @@ public class ActivateShooter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            other.GetComponent<LaunchProjectile>().enabled = !other.GetComponent<LaunchProjectile>().enabled;
-            other.GetComponent<BurstFire>().enabled = !other.GetComponent<BurstFire>().enabled;
-            StartCoroutine(resetComponents(other));
+            // other.GetComponent<LaunchProjectile>().enabled = !other.GetComponent<LaunchProjectile>().enabled;
+            // other.GetComponent<BurstFire>().enabled = !other.GetComponent<BurstFire>().enabled;
+            other.GetComponent<BurstFire>().activateComponent();
             gameObject.SetActive(false);
         }
     }
 
-    /// <summary>
-    /// Couroutine which toggles certain components on 
-    /// the player prefab.
-    /// </summary>
-    /// <param name="other"></param>
-    /// <returns></returns>
-    IEnumerator resetComponents(Collider other) {
-        yield return new WaitForSeconds(timer);
-        other.GetComponent<LaunchProjectile>().enabled = !other.GetComponent<LaunchProjectile>().enabled;
-        other.GetComponent<BurstFire>().enabled = !other.GetComponent<BurstFire>().enabled;
-        Debug.Log("Couroutine Ended");
-    }
 }
