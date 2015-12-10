@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HUD_Screen : UI_Screen {
@@ -11,18 +11,20 @@ public class HUD_Screen : UI_Screen {
     {
         base.Start();
     }
- 
-    /// <summary>
-    /// sets HUD to fill of current health and alters the color at different health ranges 
-    /// </summary>
+    //void Awake()
+    //{
+    //    playerRigidBody = GetComponent<Rigidbody>();
+    //}
+    // Update is called once per frame
     void Update()
     {
-            health = playerHealth.health / 100f;
-     
+        
+            //baseHealth = (playerRigidBody.GetComponent<Health>().baseHealth) / 100;
+            health = playerHealth.baseHealth / 100f;
+            //fillHealth = baseHealth / 100;
+            //SetImageFill(hpBar, baseHealth);
             if (health >= .7f)
             {
-                if (health > 1f)
-                    health = 1f;
                 SetImageFill(hpBar, health);
                 SetImageColor(hpBar, Color.green);
             }

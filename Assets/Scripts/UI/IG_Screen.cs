@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class IGscreen: UI_Screen {
@@ -13,8 +13,8 @@ public class IGscreen: UI_Screen {
 
     // Update is called once per frame
     void Update () {
-        health = (GetComponent<Health>().health) / 100 ;
-        //fillHealth = health / 100;
+        health = (GetComponent<Health>().baseHealth) / 100 ;
+        //fillHealth = baseHealth / 100;
         SetImageFill(hpBar, health);
         if (health >= 70)
             SetImageColor(hpBar, Color.red);
@@ -22,7 +22,7 @@ public class IGscreen: UI_Screen {
             SetImageColor(hpBar, Color.yellow);
         else if (health > 0 && health < 25)
             SetImageColor(hpBar, Color.red);
-        //else if (health <= 0)
+        //else if (baseHealth <= 0)
         //    SetText(gameOver,"U lost nub");
 	
 	}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class hpBarTest : MonoBehaviour {
@@ -8,12 +8,12 @@ public class hpBarTest : MonoBehaviour {
 	void Start () {
 	
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-	if (Input.GetKeyDown(reduceHealth)) // reduces player health by 20 everytime A is pressed
+	if (Input.GetKeyDown(reduceHealth))
         {
-            playerHealth.takeDamage(20f);
+            playerHealth.baseHealth -= 20;
         }
 	}
 }
