@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour {
     /// <param name="other">"Other" references an outside collider that is hitting the current Object.</param>
     private void OnTriggerEnter(Collider other) {
 		if (other.CompareTag("Player")) {
-			other.GetComponent<Health>().takeDamage(damage);
+			other.GetComponent<Health>().TakeDamage(damage);
 		}
         else if (other.CompareTag("Obstacle")) {
             Destroy(gameObject);

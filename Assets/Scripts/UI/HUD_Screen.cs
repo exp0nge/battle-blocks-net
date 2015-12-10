@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HUD_Screen : UI_Screen {
@@ -19,10 +19,10 @@ public class HUD_Screen : UI_Screen {
     void Update()
     {
         
-            //health = (playerRigidBody.GetComponent<Health>().health) / 100;
-            health = playerHealth.health / 100f;
-            //fillHealth = health / 100;
-            //SetImageFill(hpBar, health);
+            //baseHealth = (playerRigidBody.GetComponent<Health>().baseHealth) / 100;
+            health = playerHealth.baseHealth / 100f;
+            //fillHealth = baseHealth / 100;
+            //SetImageFill(hpBar, baseHealth);
             if (health >= .7f)
             {
                 SetImageFill(hpBar, health);

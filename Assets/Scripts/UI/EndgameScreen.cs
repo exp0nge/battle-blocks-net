@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EndgameScreen : UI_Screen {
@@ -17,7 +17,7 @@ public class EndgameScreen : UI_Screen {
     //}
     // Update is called once per frame
     void Update () {
-        health = playerHealth.health / 100f;
+        health = playerHealth.baseHealth / 100f;
         if (health <= 0f)
         {
             OpenThisScreen();

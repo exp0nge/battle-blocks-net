@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class hpBarTest : MonoBehaviour {
@@ -13,7 +13,7 @@ public class hpBarTest : MonoBehaviour {
 	void Update () {
 	if (Input.GetKeyDown(reduceHealth))
         {
-            playerHealth.health -= 20;
+            playerHealth.baseHealth -= 20;
         }
 	}
 }

@@ -3,35 +3,79 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
-    public float health = 100f;
+    public float baseHealth = 100f;
     public ParticleSystem deathEffect;
     public Image healthHUD;
 
-    // Reference to the public field, health
+    #region Color
+    public Color mediumHealth;
+    public Color criticalHealth;
+    #endregion
+
+    // Reference to the public field, baseHealth
     private float currentHealth;
 
     private void Awake() {
-        currentHealth = health;
+        currentHealth = baseHealth;
+    }
+
+    private void Start() {
+        if (mediumHealth == null && criticalHealth == null) {
+            mediumHealth = Color.yellow;
+            criticalHealth = Color.red;
+        }
     }
 
     /// <summary>
-    /// Calculates the health of the current player. If currentHealth
+    /// Calculates the baseHealth of the current player. If currentHealth
     /// falls below 0, then the object is destroyed. Additionally sets the
-    /// health bar to an appropriate color depending on the health.
+    /// baseHealth bar to an appropriate color depending on the baseHealth.
     /// </summary>
-    /// <param name="damage">Float value, amount to subtract</param>
-    public void takeDamage(float damage)
+    /// <param name="damage">Float,value to be subtracted from currentHealth</param>
+    public void TakeDamage(float damage)
 	{
 		currentHealth -= damage;
-        healthHUD.fillAmount = currentHealth / 100f;
-
         if (currentHealth <= 0) {
             Instantiate(deathEffect, transform.position, Quaternion.Euler(270, 0, 0)); // instantiates and plays Explode 
             gameObject.SetActive(false);
         }
-        else if (currentHealth <= 66 && currentHealth > 33)
-            healthHUD.color = Color.yellow;
+        healthHUD.fillAmount = SetFillAmount();
+        SetHealthColor();
+    }
+
+    /// <summary>
+    /// Adds a set value to the currentHealth, if the currentHealth
+    /// is greater than or equal to the baseHealth, the currentHealth
+    /// is set to be equal to the baseHealth.
+    /// </summary>
+    /// <param name="amount">Float, value to be added to currentHealth</param>
+    public void HealHealth(float amount) {
+        currentHealth += amount;
+        if (currentHealth >= baseHealth) {
+            currentHealth = baseHealth;
+        }
+        healthHUD.fillAmount = SetFillAmount();
+        SetHealthColor();
+    }
+
+
+    /// <summary>
+    /// Checks the current baseHealth and sets an appropriate color 
+    /// value to the Image component.
+    /// </summary>
+    private void SetHealthColor() {
+        if (currentHealth <= 66 && currentHealth > 33)
+            healthHUD.color = mediumHealth;
         else if (currentHealth <= 33 && currentHealth > 0)
-            healthHUD.color = Color.red;
+            healthHUD.color = criticalHealth;
+    }
+
+    /// <summary>
+    /// Sets the fillAmount of an Image to be the ratio
+    /// of currentHealth and the baseHealth;
+    /// </summary>
+    /// <returns></returns>
+    private float SetFillAmount() {
+        return currentHealth / baseHealth;
     }
 }
