@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Enums are a collection of states that can be enumerated
@@ -52,14 +51,14 @@ public class Movement : MonoBehaviour {
         playerRigidbody.isKinematic = true;
     }
 
-    //Update is called once every frame
+    // Update is called once every frame
     private void Update() {
         //Store the values of Input.GetAxis
         movementInput = Input.GetAxis(verticalMovement);
         rotationInput = Input.GetAxis(horizontalMovement);
     }
 
-	//FixedUpdate() is used for physics calculation and runs every other frame
+	// FixedUpdate() is used for physics calculation and runs every other frame
     private void FixedUpdate() {
         move();
         turn();
@@ -86,9 +85,9 @@ public class Movement : MonoBehaviour {
                 // Sets the currentState to isTeleporting
                 currentState = MovementStates.isTeleporting;
             }
-            //Update position with scale factor
+            // Update position with scale factor
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
-            Debug.Log("Movement State: " + currentState);
+            // Debug.Log("Movement State: " + currentState);
         }
         else if (Input.GetKeyUp(dashInput) && Time.time > dashCooldown)
         {
@@ -96,18 +95,18 @@ public class Movement : MonoBehaviour {
             dash();
             // Sets the currentState to isDashing
             currentState = MovementStates.isDashing;
-            Debug.Log("Movement State: " + currentState);
+            // Debug.Log("Movement State: " + currentState);
         }
         else if ( movementInput != 0) {
             Vector3 movement = transform.forward * movementInput * playerSpeed * Time.deltaTime;
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
             // Sets the currentState to isMoving
             currentState = MovementStates.isMoving;
-            Debug.Log("Movement State: " + currentState);
+            // Debug.Log("Movement State: " + currentState);
         }
         else {
             currentState = MovementStates.isStill;
-            Debug.Log("Movement State: " + currentState);
+            // Debug.Log("Movement State: " + currentState);
         }
         
     }

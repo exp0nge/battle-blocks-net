@@ -20,10 +20,7 @@ public class Health : MonoBehaviour {
     }
 
     private void Start() {
-        if (mediumHealth == null && criticalHealth == null) {
-            mediumHealth = Color.yellow;
-            criticalHealth = Color.red;
-        }
+        
     }
 
     /// <summary>

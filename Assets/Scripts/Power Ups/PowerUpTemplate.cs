@@ -1,15 +1,18 @@
 using UnityEngine;
 using System.Collections;
+using Utilities;
 
 public class PowerUpTemplate : MonoBehaviour {
 
     public float timer = 10f;
     public string otherTag = "Player";
+    public float rotationSpeed = 50f;
+    private PowerUpSpawn manager;
 
-
-    protected virtual void OnEnabled() {
-        Debug.Log("Called");
-        StartCoroutine(StartObjectLifeTime());
+    protected virtual void Awake() {
+        if (manager == null) {
+            manager = FindObjectOfType<PowerUpSpawn>();
+        }
     }
 
 	// Use this for initialization
@@ -19,16 +22,25 @@ public class PowerUpTemplate : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-	
+        transform.Rotate(Vector3.up * rotationSpeed);
+        if (gameObject.activeSelf)
+            Invoke("DeactivateSelf", timer);
 	}
 
+    /// <summary>
+    /// Overridable method by the children objects.
+    /// </summary>
+    /// <param name="other">Collider of another gameObject</param>
     protected virtual void OnTriggerEnter(Collider other) {
         
     }
 
-    protected virtual IEnumerator StartObjectLifeTime() {
-        yield return new WaitForSeconds(timer);
+    /// <summary>
+    /// DeactivateSelf disables to current gameObject
+    /// to an inactive state.
+    /// </summary>
+    protected void DeactivateSelf() {
+        manager.subtactActiveCount();
         gameObject.SetActive(false);
-        Debug.Log(gameObject.name + " is deactivated");
     }
 }
