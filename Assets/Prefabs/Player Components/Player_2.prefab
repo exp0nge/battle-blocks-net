@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34cd41ef0f8e494f9269abf1f424257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  playerNumber: 2
   projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
   shotTransform: {fileID: 418230}
   aimSlider: {fileID: 11450868}
@@ -429,10 +429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a41c4a5f9e302546b9d29cd4a105955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMovement: Horizontal_1
-  verticalMovement: Vertical_1
-  teleportInput: 9
-  dashInput: 308
+  horizontalMovement: Horizontal_2
+  verticalMovement: Vertical_2
+  dashInput: Dash_2
+  teleportInput: Teleport_2
   playerSpeed: 5
   turnSpeed: 30
   slideForce: 1000
@@ -590,12 +590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1303bdd7755a4071b505438a4c61115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  playerNumber: 2
   projectile: {fileID: 5419490, guid: be438a043fc56504da099c6928f91d78, type: 2}
   shotTransform: {fileID: 418230}
   shotForce: 1000
   fireRate: .5
-  shooterKey: 32
 --- !u!198 &19829676
 ParticleSystem:
   m_ObjectHideFlags: 1
