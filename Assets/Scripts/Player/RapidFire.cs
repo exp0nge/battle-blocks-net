@@ -1,8 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class RapidFire : MonoBehaviour
-{
+public class RapidFire : MonoBehaviour {
 
     public Rigidbody projectile;
     public Transform shotPosition;
