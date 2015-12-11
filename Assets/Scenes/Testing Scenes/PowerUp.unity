@@ -741,6 +741,11 @@ Prefab:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1000421759}
+    - target: {fileID: 11442850, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 19809170, guid: 19101e13c5b45814e92d86a7e10dfb52,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0

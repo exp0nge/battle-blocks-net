@@ -5,7 +5,7 @@ public class Particles : MonoBehaviour {
     
     public ParticleSystem moveParticles;
     public ParticleSystem dashParticles;
-
+    public ParticleSystem hitParticles;
     private MovementStates mstate;
 
     void Awake()

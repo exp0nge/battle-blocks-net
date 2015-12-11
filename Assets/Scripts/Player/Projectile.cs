@@ -26,8 +26,9 @@ public class Projectile : MonoBehaviour {
         else if (other.CompareTag("Obstacle")) {
             Destroy(gameObject);
         }
-        particle = Instantiate(damageParticles, transform.position, Quaternion.Euler(0, 180, 0)) as ParticleSystem;
-        particle.Play();
+        // particle = Instantiate(damageParticles, transform.position, Quaternion.Euler(0, 180, 0)) as ParticleSystem;
+        // particle.Play();
+        other.gameObject.GetComponent<Particles>().hitParticles.transform.LookAt(transform.position);
         Destroy(gameObject);
     }
    
