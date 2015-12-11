@@ -219,6 +219,10 @@ Prefab:
       propertyPath: teleportInput
       value: Teleport_2
       objectReference: {fileID: 0}
+    - target: {fileID: 11494706, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
   m_IsPrefabParent: 0

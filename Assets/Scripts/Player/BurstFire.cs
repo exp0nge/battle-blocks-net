@@ -5,7 +5,6 @@ public class BurstFire : ShooterTemplate {
 
 	public float shotForce = 1000f;
 	public float fireRate = 0.5f;
-	public KeyCode shooterKey = KeyCode.Space;
 
 	private float nextInterval;
 	private int burstCount = 3;
