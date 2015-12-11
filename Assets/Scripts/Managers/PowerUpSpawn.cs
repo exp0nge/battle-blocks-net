@@ -27,6 +27,7 @@ public class PowerUpSpawn : MonoBehaviour {
             }
         }
 	}
+
     void randomPowerup()
     {
         int index = (int)Random.Range(0f, (float)allthePowerUps.Count);
@@ -39,11 +40,7 @@ public class PowerUpSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         powerupTimer -= Time.deltaTime;
-        //for (int i = 0; i < allthePowerUps.Count; i++)
-        //{
-        //    if (allthePowerUps[i].activeInHierarchy)
-        //        amountActive += 1;
-        //}
+
         if (powerupTimer <= 0 && amountActive < 2)
         {
             randomPowerup();

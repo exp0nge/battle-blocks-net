@@ -16,4 +16,13 @@ public class ReplenishHealth : PowerUpTemplate {
             gameObject.SetActive(false);
         }
     }
+
+    protected override void Update() {
+        base.Update();
+        if (!isActive) {
+            Debug.Log("Deactivating " + gameObject.name);
+            Invoke("DeactivateSelf", timer);
+            isActive = true;
+        }
+    }
 }
