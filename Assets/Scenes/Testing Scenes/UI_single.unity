@@ -717,6 +717,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 235791456}
   - 114: {fileID: 235791457}
+  - 114: {fileID: 235791458}
   m_Layer: 5
   m_Name: ColorScreen
   m_TagString: Untagged
@@ -757,6 +758,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d686f3acc85bb46aa857a351cf63b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &235791458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235791455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e08091b5d4dccd49aff066d60b4eece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redSlider: Red Slider
+  redSliderP2: Red Slider P2
+  greenSlider: Green Slider
+  greenSliderP2: Green Slider P2
+  blueSlider: Blue Slider
+  blueSliderP2: Blue Slider P2
+  imagePreview: Color Preview P1
+  imagePreviewP2: Color Preview P2
+  material: {fileID: 2100000, guid: 2c864f0ac38b097418847d6c805fe9c1, type: 2}
+  materialP2: {fileID: 2100000, guid: efc1b442fdff3164c9144f0db09b4e65, type: 2}
 --- !u!1 &265732924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,16 +1543,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 488829662}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e08091b5d4dccd49aff066d60b4eece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   redSlider: Red Slider
+  redSliderP2: Red Slider P2
   greenSlider: Green Slider
+  greenSliderP2: Green Slider P2
   blueSlider: Blue Slider
+  blueSliderP2: Blue Slider P2
   imagePreview: Color Preview P1
+  imagePreviewP2: Color Preview P2
   material: {fileID: 2100000, guid: 2c864f0ac38b097418847d6c805fe9c1, type: 2}
+  materialP2: {fileID: 0}
 --- !u!1 &495750757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,16 +2992,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 963350707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e08091b5d4dccd49aff066d60b4eece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   redSlider: Red Slider P2
+  redSliderP2: Red Slider P2
   greenSlider: Green Slider P2
+  greenSliderP2: Green Slider P2
   blueSlider: Blue Slider P2
+  blueSliderP2: Blue Slider P2
   imagePreview: Color Preview P2
+  imagePreviewP2: Color Preview P2
   material: {fileID: 2100000, guid: efc1b442fdff3164c9144f0db09b4e65, type: 2}
+  materialP2: {fileID: 0}
 --- !u!1 &974516740
 GameObject:
   m_ObjectHideFlags: 0
