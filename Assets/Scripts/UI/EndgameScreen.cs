@@ -18,7 +18,8 @@ public class EndgameScreen : UI_Screen {
             if (health < 0f) {
                 health = 0f;
             }
-            SetText(gameOver, "U lost scrub");
+            OpenThisScreen();
+            SetText(gameOver, "GAME OVER");
         }
     }
 }

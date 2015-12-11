@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
@@ -156,6 +155,40 @@ public class UI_Screen : MonoBehaviour {
     #endregion
 
     #region UI Getters
+    /// <summary>
+    /// Returns an instance of an image object from the imageDict
+    /// dictionary if the key exists.
+    /// </summary>
+    /// <param name="imageName">String of the Image</param>
+    /// <returns>Image</returns>
+    public Image GetImage(string imageName) {
+        if (!imageDict.ContainsKey(imageName))
+            Debug.LogError(imageName + " does not exist within the Dictionary!");
+        return imageDict[imageName];
+    }
 
+    /// <summary>
+    /// Returns an instance of a slider object from the sliderDict
+    /// dictionary, if the key exists.
+    /// </summary>
+    /// <param name="sliderName">String of the Slider</param>
+    /// <returns>Slider</returns>
+    public Slider GetSlider(string sliderName) {
+        if (!sliderDict.ContainsKey(sliderName))
+            Debug.LogError(sliderName + " does not exist within the Dictionary!");
+        return sliderDict[sliderName];
+    }
+
+    /// <summary>
+    /// Returns an instance of a Text object from the textDict
+    /// dictionary, if the key exists.
+    /// </summary>
+    /// <param name="textName">String of the Text</param>
+    /// <returns>Text</returns>
+    public Text GetText(string textName) {
+        if (!textDict.ContainsKey(textName))
+            Debug.LogError(textName + " does not exist within the Dictionary!");
+        return textDict[textName];
+    }
     #endregion
 }
