@@ -10,9 +10,7 @@ public class Particles : MonoBehaviour {
 
     void Awake()
     {
-        //particle = GetComponentsInChildren<ParticleSystem>();
-        //moveparticles = GetComponentInChildren<ParticleSystem>();
-        //dashparticles = GetComponentInChildren<ParticleSystem>();
+
     }
 
     void Update ()

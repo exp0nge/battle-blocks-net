@@ -33,6 +33,10 @@ public class CameraControl : MonoBehaviour {
         transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref moveVelocity, dampTime);
     }
 
+    /// <summary>
+    /// Finds the average position between the players
+    /// and centers the camera.
+    /// </summary>
     private void GetAvgPosition() {
         Vector3 averagePos = new Vector3();
         int numberOfTargets = 0;
@@ -58,12 +62,19 @@ public class CameraControl : MonoBehaviour {
         desiredPosition = averagePos;
     }
     
+    /// <summary>
+    /// Pans the camera's view closer to the targets.
+    /// </summary>
     private void ZoomCamera() {
         // Find the required size based on the desired position and smoothly transition to that size.
         float requiredSize = GetSize();
         camera.orthographicSize = Mathf.SmoothDamp(camera.orthographicSize, requiredSize, ref zoomSpeed, dampTime);
     }
     
+    /// <summary>
+    /// Gets the right screen size that captures the targets.
+    /// </summary>
+    /// <returns></returns>
     private float GetSize() {
         // Find the position the camera rig is moving towards in its local space.
         Vector3 desiredLocalPos = transform.InverseTransformPoint(desiredPosition);
