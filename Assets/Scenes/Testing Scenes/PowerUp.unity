@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &144616813 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129072, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+  m_PrefabInternal: {fileID: 1570180337}
 --- !u!1 &197087014
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473751147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.6700001, y: .300000012, z: 11.5100002}
+  m_LocalPosition: {x: 12.6700001, y: .5, z: 11.5100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1009255535}
@@ -246,6 +250,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11490198, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: activeSlider
+      value: 
+      objectReference: {fileID: 144616813}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0
@@ -284,6 +292,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 485438, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
   m_PrefabInternal: {fileID: 1755584797}
+--- !u!114 &1000421759 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11410318, guid: 8799c08914c84ae4f8710f161be71700,
+    type: 2}
+  m_PrefabInternal: {fileID: 548789552}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1009255534
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2519087c36628e4ca3bd74d147b275a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountSpawned: 2
+  amountToSpawn: 2
+  amountActive: 0
   powerupTimer: 3
   powerUps:
   - {fileID: 171892, guid: 1f63dbda839fca947b4b33a660a6d559, type: 2}
@@ -613,7 +628,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1251574112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.6800003, y: .300000012, z: 11.5100002}
+  m_LocalPosition: {x: -14.6800003, y: .5, z: 11.5100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1009255535}
@@ -746,7 +761,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22408684, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19899018, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
       propertyPath: looping
@@ -779,6 +794,26 @@ Prefab:
     - target: {fileID: 11473170, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
       propertyPath: criticalHealth.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 129072, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490198, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: activeSlider
+      value: 
+      objectReference: {fileID: 144616813}
+    - target: {fileID: 11405342, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405342, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1000421759}
+    - target: {fileID: 11405342, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
@@ -921,7 +956,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740783121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .300000012, z: 11.5100002}
+  m_LocalPosition: {x: 0, y: .5, z: 11.5100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1009255535}

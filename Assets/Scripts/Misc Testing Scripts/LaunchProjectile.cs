@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class LaunchProjectile : ShooterTemplate {
 
     public Slider aimSlider;
+    public GameObject activeSlider;
     public float minLaunchForce = 15f;
     public float maxLaunchForce = 30f;
     public float maxChargeTime = 0.75f;
@@ -39,6 +40,7 @@ public class LaunchProjectile : ShooterTemplate {
         }
         else if (Input.GetButton (fireButton) && !hasFired) {
             currentLaunchForce += chargeSpeed * Time.deltaTime;
+            activeSlider.SetActive(true);
             aimSlider.value = currentLaunchForce;
         }
         else if (Input.GetButtonUp(fireButton) && !hasFired) {
@@ -49,6 +51,7 @@ public class LaunchProjectile : ShooterTemplate {
     /// <summary>
     /// Instantiates a Rigidbody prefab and uses the physics engine to launch
     /// the projectile.
+    /// on launch, aim slider is deactivated
     /// </summary>
     private void Shoot() {
         hasFired = true;
@@ -56,5 +59,8 @@ public class LaunchProjectile : ShooterTemplate {
         shot.velocity = currentLaunchForce * shotTransform.forward;
 
         currentLaunchForce = minLaunchForce;
+
+        activeSlider.SetActive(false);
+
     }
 }

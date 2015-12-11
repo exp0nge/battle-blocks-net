@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PowerUpTemplate : MonoBehaviour {
 
-    public float timer = 30f;
+    public float timer = 10f;
     public string otherTag = "Player";
 
 
