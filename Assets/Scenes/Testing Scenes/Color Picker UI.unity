@@ -129,7 +129,7 @@ GameObject:
   - 222: {fileID: 111752323}
   - 114: {fileID: 111752322}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Handle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   - 222: {fileID: 346988935}
   - 114: {fileID: 346988934}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ GameObject:
   - 222: {fileID: 388625828}
   - 114: {fileID: 388625827}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,7 +330,7 @@ GameObject:
   - 222: {fileID: 616424179}
   - 114: {fileID: 616424178}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Handle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,7 +969,7 @@ GameObject:
   - 222: {fileID: 1503506070}
   - 114: {fileID: 1503506069}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,7 +1170,7 @@ GameObject:
   - 222: {fileID: 1599038210}
   - 114: {fileID: 1599038209}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,7 +1237,7 @@ GameObject:
   - 222: {fileID: 1633788203}
   - 114: {fileID: 1633788202}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1405,9 +1405,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941121888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d686f3acc85bb46aa857a351cf63b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e08091b5d4dccd49aff066d60b4eece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redSlider: Red Slider
+  greenSlider: Green Slider
+  blueSlider: Blue Slider
+  imagePreview: Image
 --- !u!1 &1941397933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1423,7 @@ GameObject:
   - 222: {fileID: 1941397936}
   - 114: {fileID: 1941397935}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Handle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,7 +1523,7 @@ GameObject:
   - 222: {fileID: 2111927117}
   - 114: {fileID: 2111927116}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
