@@ -164,7 +164,7 @@ public class UI_Screen : MonoBehaviour {
     public Image GetImage(string imageName) {
         if (!imageDict.ContainsKey(imageName))
             Debug.LogError(imageName + " does not exist within the Dictionary!");
-        return imageDict[name];
+        return imageDict[imageName];
     }
 
     /// <summary>

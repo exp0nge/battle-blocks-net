@@ -8,6 +8,7 @@ public class ColorPicker_Screen : UI_Screen {
     public string greenSlider = "Green Slider";
     public string blueSlider = "Blue Slider";
     public string imagePreview = "Image";
+    public Material material;
 
     private float redValue;
     private float greenValue;
@@ -28,6 +29,7 @@ public class ColorPicker_Screen : UI_Screen {
         blueValue = GetColorRatio(GetSlider(blueSlider));
 
         SetImageColor(imagePreview, redValue, greenValue, blueValue, 1);
+        material.color = GetImage(imagePreview).color;
     }
 
     public float GetColorRatio(Slider slider) {
