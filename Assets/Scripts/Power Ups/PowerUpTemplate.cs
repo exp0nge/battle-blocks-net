@@ -1,10 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using Utilities;
 
 public class PowerUpTemplate : MonoBehaviour {
 
     public float timer = 10f;
     public string otherTag = "Player";
+    public float rotationSpeed = 50f;
+    private PowerUpSpawn manager;
+
+    protected virtual void Awake() {
+        if (manager == null) {
+            manager = FindObjectOfType<PowerUpSpawn>();
+        }
+    }
 
 	// Use this for initialization
 	protected virtual void Start () {
@@ -13,6 +22,7 @@ public class PowerUpTemplate : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
+        transform.Rotate(Vector3.up * rotationSpeed);
         if (gameObject.activeSelf)
             Invoke("DeactivateSelf", timer);
 	}
@@ -30,6 +40,7 @@ public class PowerUpTemplate : MonoBehaviour {
     /// to an inactive state.
     /// </summary>
     protected void DeactivateSelf() {
+        manager.subtactActiveCount();
         gameObject.SetActive(false);
     }
 }

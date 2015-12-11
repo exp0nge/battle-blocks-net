@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using Utilities.Singleton;
 
-public class ParticleManager : MonoBehaviour {
+public class ParticleManager : Singleton<ParticleManager> {
 
     public int numberOfParticles = 10;
     public ParticleSystem particleEffect;

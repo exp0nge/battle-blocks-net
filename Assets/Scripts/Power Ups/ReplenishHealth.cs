@@ -15,8 +15,5 @@ public class ReplenishHealth : PowerUpTemplate {
 
     protected override void Update() {
         base.Update();
-        //if (gameObject.activeSelf) {
-        //    Invoke("DeactivateSelf", timer);
-        //}
     }
 }
