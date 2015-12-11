@@ -14,8 +14,10 @@ public class Movement : MonoBehaviour {
 
     public string horizontalMovement = "Horizontal";
     public string verticalMovement = "Vertical";
-    public KeyCode teleportInput = KeyCode.Return;
-    public KeyCode dashInput = KeyCode.LeftAlt;
+    public string dashInput = "Dash";
+    public string teleportInput = "Teleport";
+    //public KeyCode teleportInput = KeyCode.Return;
+    //public KeyCode dashInput = KeyCode.LeftAlt;
     public float playerSpeed = 5f;
     public float turnSpeed = 30f;
     public float slideForce = 1000f; // Determines how strong the force should be applied to the rigidbody
@@ -69,7 +71,7 @@ public class Movement : MonoBehaviour {
     //using the Rigidbody to move the body
     private void move() {
         //Check if teleport key is pressed and teleport is off cooldown.
-        if (Input.GetKeyDown(teleportInput) && Time.time > teleportCooldown && (transform.forward.y >= 0)){
+        if (Input.GetButtonDown(teleportInput) && Time.time > teleportCooldown && (transform.forward.y >= 0)) { 
             teleport = 5;
             teleportCooldown = Time.time + 3.0F;
             Vector3 movement;
@@ -89,7 +91,7 @@ public class Movement : MonoBehaviour {
             playerRigidbody.MovePosition(movement + playerRigidbody.position);
             // Debug.Log("Movement State: " + currentState);
         }
-        else if (Input.GetKeyUp(dashInput) && Time.time > dashCooldown)
+        else if (Input.GetButtonUp(dashInput) && Time.time > dashCooldown)
         {
             dashCooldown = Time.time + slideRate;
             dash();

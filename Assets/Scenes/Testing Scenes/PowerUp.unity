@@ -205,11 +205,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11414502, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
       propertyPath: horizontalMovement
-      value: Horizontal_1
+      value: Horizontal_2
       objectReference: {fileID: 0}
     - target: {fileID: 11414502, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
       propertyPath: verticalMovement
-      value: Vertical_1
+      value: Vertical_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414502, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
+      propertyPath: dashInput
+      value: Dash_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414502, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
+      propertyPath: teleportInput
+      value: Teleport_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
@@ -637,18 +645,6 @@ Prefab:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1000421759}
-    - target: {fileID: 125144, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-      propertyPath: m_Name
-      value: Player_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11464226, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-      propertyPath: horizontalMovement
-      value: Horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 11464226, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
-      propertyPath: verticalMovement
-      value: Vertical
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
   m_IsPrefabParent: 0

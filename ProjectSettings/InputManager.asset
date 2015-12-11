@@ -6,7 +6,7 @@ InputManager:
   serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
-    m_Name: Horizontal
+    m_Name: Horizontal_1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: left
@@ -22,7 +22,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Vertical
+    m_Name: Vertical_1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: down
@@ -42,7 +42,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: space
+    positiveButton: right ctrl
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -54,11 +54,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dash
+    m_Name: Dash_1
     descriptiveName: Launches the player forward
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: q
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -70,11 +70,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Teleport
+    m_Name: Teleport_1
     descriptiveName: Moves the player a set distance instantaneously
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: tab
+    positiveButton: enter
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -150,7 +150,7 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Horizontal_1
+    m_Name: Horizontal_2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: a
@@ -166,7 +166,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Vertical_1
+    m_Name: Vertical_2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: w
@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: right ctrl
+    positiveButton: space
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -198,11 +198,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Dash_1
+    m_Name: Dash_2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: right shift
+    positiveButton: tab
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

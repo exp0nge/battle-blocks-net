@@ -538,8 +538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalMovement: Horizontal_1
   verticalMovement: Vertical_1
-  teleportInput: 9
-  dashInput: 308
+  dashInput: Dash_1
+  teleportInput: Teleport_1
   playerSpeed: 5
   turnSpeed: 30
   slideForce: 1000
