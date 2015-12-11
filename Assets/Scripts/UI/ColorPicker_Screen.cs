@@ -13,8 +13,8 @@ public class ColorPicker_Screen : UI_Screen {
     public string imagePreview = "Color Preview P1";
     public string imagePreviewP2 = "Color Preview P2";
 
-    public Material material;
-    public Material materialP2;
+    public Material playerOneMaterial;
+    public Material playerTwoMaterial;
 
     private float redValue;
     private float redValueP2;
@@ -50,8 +50,8 @@ public class ColorPicker_Screen : UI_Screen {
 
         SetImageColor(imagePreview, redValue, greenValue, blueValue, 1);
         SetImageColor(imagePreviewP2, redValueP2, greenValueP2, blueValueP2, 1);
-        material.color = GetImage(imagePreview).color;
-        materialP2.color = GetImage(imagePreviewP2).color;
+        playerOneMaterial.color = GetImage(imagePreview).color;
+        playerTwoMaterial.color = GetImage(imagePreviewP2).color;
     }
 
     public float GetColorRatio(Slider slider) {

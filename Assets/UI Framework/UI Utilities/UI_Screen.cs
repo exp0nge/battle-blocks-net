@@ -49,7 +49,6 @@ public class UI_Screen : MonoBehaviour {
 
         for (int i = 0; i < sliderElements.Length; i++) {
             sliderDict.Add(sliderElements[i].name, sliderElements[i]);
-            Debug.Log(sliderElements[i].name);
         }
     }
 
