@@ -3,16 +3,17 @@ using System.Collections.Generic;
 
 public class PowerUpSpawn : MonoBehaviour {
 
-    // TODO: Rename the variable below, the names are terrible
-    // I'm getting tired.
     public int amountToSpawn = 2;
     public int amountActive = 0;
     public float powerupTimer = 5f;
     public GameObject[] powerUps;
+
     private Transform[] spawnPoints;
     private List<GameObject> allthePowerUps;
+    private float timer;
     
     private void Awake() {
+        timer = powerupTimer;
         spawnPoints = GetComponentsInChildren<Transform>();
         allthePowerUps = new List<GameObject>();
     }
@@ -30,22 +31,19 @@ public class PowerUpSpawn : MonoBehaviour {
 
     void randomPowerup()
     {
-        int index = (int)Random.Range(0f, (float)allthePowerUps.Count);
+        int index = (int)Random.Range(0f, allthePowerUps.Count);
         allthePowerUps[index].transform.position = spawnPoints[(int)Random.Range(0f, (float)spawnPoints.Length)].position;
         allthePowerUps[index].SetActive(true);
-        Debug.Log(allthePowerUps[index].name);
         amountActive += 1;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        powerupTimer -= Time.deltaTime;
-
-        if (powerupTimer <= 0 && amountActive < 2)
+        timer -= Time.deltaTime;
+        if (timer <= 0 && amountActive < 2)
         {
             randomPowerup();
-            powerupTimer = 3f;
-
+            timer = powerupTimer;
         }
     }
 }

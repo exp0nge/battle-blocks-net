@@ -6,8 +6,6 @@ public class PowerUpTemplate : MonoBehaviour {
     public float timer = 10f;
     public string otherTag = "Player";
 
-    protected bool isActive = false;
-
 	// Use this for initialization
 	protected virtual void Start () {
 	
@@ -15,19 +13,22 @@ public class PowerUpTemplate : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-	
+        if (gameObject.activeSelf)
+            Invoke("DeactivateSelf", timer);
 	}
 
+    /// <summary>
+    /// Overridable method by the children objects.
+    /// </summary>
+    /// <param name="other">Collider of another gameObject</param>
     protected virtual void OnTriggerEnter(Collider other) {
         
     }
 
-    protected IEnumerator StartObjectLifeTime() {
-        yield return new WaitForSeconds(timer);
-        gameObject.SetActive(false);
-        Debug.Log(gameObject.name + " is deactivated");
-    }
-
+    /// <summary>
+    /// DeactivateSelf disables to current gameObject
+    /// to an inactive state.
+    /// </summary>
     protected void DeactivateSelf() {
         gameObject.SetActive(false);
     }
