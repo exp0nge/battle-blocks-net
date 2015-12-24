@@ -123,16 +123,17 @@ public class UI_Screen : MonoBehaviour {
 
     #region Set Text
     /// <summary>
-    /// Set text with fontsize. If no fontsize is added, it is defaulted to size 25.
+    /// Sets the text to display a custom string.
     /// </summary>
     /// <param name="textName">Name of the Text Component</param>
     /// <param name="screenText">The text to display</param>
-    /// <param name="textSize">Size of the font</param>
-    public void SetText(string textName, string screenText, float textSize = 25) {
-        if (textDict.ContainsKey(textName)) {
+    public void SetText(string textName, string screenText) {
+        if (textDict.ContainsKey(textName))
+        {
             textDict[textName].text = screenText;
         }
-        else {
+        else
+        {
             Debug.LogError("Text not in dictionary");
         }
     }

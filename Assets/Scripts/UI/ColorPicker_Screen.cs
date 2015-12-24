@@ -13,42 +13,57 @@ public class ColorPicker_Screen : UI_Screen {
     public string imagePreview = "Color Preview P1";
     public string imagePreviewP2 = "Color Preview P2";
 
+    public string redValueNameP1 = "Red Value P1";
+    public string redValueNameP2 = "Red Value P2";
+    public string greenValueNameP1 = "Green Value P1";
+    public string greenValueNameP2 = "Green Value P2";
+    public string blueValueNameP1 = "Blue Value P1";
+    public string blueValueNameP2 = "Blue Value P2";
+
     public Material playerOneMaterial;
     public Material playerTwoMaterial;
 
-    private float redValue;
+    private float redValueP1;
     private float redValueP2;
-    private float greenValue;
+    private float greenValueP1;
     private float greenValueP2;
-    private float blueValue;
+    private float blueValueP1;
     private float blueValueP2;
 
     protected override void Start() {
         base.Start();
-        redValue = GetColorRatio(GetSlider(redSlider));
+        redValueP1 = GetColorRatio(GetSlider(redSlider));
         redValueP2 = GetColorRatio(GetSlider(redSliderP2));
 
-        greenValue = GetColorRatio(GetSlider(greenSlider));
+        greenValueP1 = GetColorRatio(GetSlider(greenSlider));
         greenValueP2 = GetColorRatio(GetSlider(greenSliderP2));
 
-        blueValue = GetColorRatio(GetSlider(blueSlider));
+        blueValueP1 = GetColorRatio(GetSlider(blueSlider));
         blueValueP2 = GetColorRatio(GetSlider(blueSliderP2));
     }
 
 
     // Update is called once per frame
     void Update() {
-        //Debug.Log(redSlider);
-        redValue = GetColorRatio(GetSlider(redSlider));
+
+        redValueP1 = GetColorRatio(GetSlider(redSlider));
+        SetText(redValueNameP1, GetSlider(redSlider).value.ToString());
+
         redValueP2 = GetColorRatio(GetSlider(redSliderP2));
+        SetText(redValueNameP2, GetSlider(redSliderP2).value.ToString());
 
-        greenValue = GetColorRatio(GetSlider(greenSlider));
+        greenValueP1 = GetColorRatio(GetSlider(greenSlider));
+        SetText(greenValueNameP1, GetSlider(greenSlider).value.ToString());
+
         greenValueP2 = GetColorRatio(GetSlider(greenSliderP2));
+        SetText(greenValueNameP2, GetSlider(greenSliderP2).value.ToString());
 
-        blueValue = GetColorRatio(GetSlider(blueSlider));
-        blueValueP2 = GetColorRatio(GetSlider(blueSliderP2)); ;
+        blueValueP1 = GetColorRatio(GetSlider(blueSlider));
+        SetText(blueValueNameP1, GetSlider(blueSlider).value.ToString());
+        blueValueP2 = GetColorRatio(GetSlider(blueSliderP2));
+        SetText(blueValueNameP2, GetSlider(blueSliderP2).value.ToString());
 
-        SetImageColor(imagePreview, redValue, greenValue, blueValue, 1);
+        SetImageColor(imagePreview, redValueP1, greenValueP1, blueValueP1, 1);
         SetImageColor(imagePreviewP2, redValueP2, greenValueP2, blueValueP2, 1);
         playerOneMaterial.color = GetImage(imagePreview).color;
         playerTwoMaterial.color = GetImage(imagePreviewP2).color;
