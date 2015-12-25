@@ -6,4 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing Scenes/PowerUp.unity
+    path: Assets/Scenes/Testing Scenes/UI_Redesign.unity
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/Battlefield.unity
