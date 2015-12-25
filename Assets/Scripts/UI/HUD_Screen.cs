@@ -11,10 +11,7 @@ public class HUD_Screen : UI_Screen {
     {
         base.Start();
     }
-    //void Awake()
-    //{
-    //    playerRigidBody = GetComponent<Rigidbody>();
-    //}
+
     // Update is called once per frame
     void Update()
     {
