@@ -1,25 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EndgameScreen : UI_Screen {
-    public float health;
-    public Health playerHealth;
-    public string gameOver = "Gameover";
     // Use this for initialization
-    protected override void Start()
-    {
+    protected override void Start() {
         base.Start();
     }
+
+    /// <summary>
+    /// Reloads the current level;
+    /// </summary>
+    public void ReloadLevel() {
+        SceneManager.LoadScene(1);
+    }
     
-    void Update () {
-        health = playerHealth.baseHealth / 100f;
-        if (health <= 0f)
-        {
-            if (health < 0f) {
-                health = 0f;
-            }
-            OpenThisScreen();
-            SetText(gameOver, "GAME OVER");
-        }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sceneIndex"></param>
+    public void ReturnToMainMenu(int sceneIndex) {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

@@ -9,10 +9,16 @@ public class Health : MonoBehaviour {
 
     // Reference to the public field, baseHealth
     private float currentHealth;
+    // Reference to the GameManager
+    private GameManager manager;
 
     private void Awake() {
         currentHealth = baseHealth;
+        manager = (GameManager)FindObjectOfType(typeof(GameManager));
     }
+
+    private void Start() {
+    }            
 
     /// <summary>
     /// Calculates the baseHealth of the current player. If currentHealth
@@ -26,6 +32,7 @@ public class Health : MonoBehaviour {
         if (currentHealth <= 0) {
             Instantiate(deathEffect, transform.position, Quaternion.Euler(270, 0, 0)); // instantiates and plays Explode 
             gameObject.SetActive(false);
+            manager.ShowEndScreen(GetComponent<LaunchProjectile>().playerNumber);
         }
         healthHUD.fillAmount = SetFillAmount();
         SetHealthColor();
@@ -46,7 +53,6 @@ public class Health : MonoBehaviour {
         SetHealthColor();
     }
 
-
     /// <summary>
     /// Checks the current baseHealth and sets an appropriate color 
     /// value to the Image component.
@@ -62,7 +68,7 @@ public class Health : MonoBehaviour {
     /// Sets the fillAmount of an Image to be the ratio
     /// of currentHealth and the baseHealth;
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Float value between 0 and 1 that sets the health's value</returns>
     private float SetFillAmount() {
         return currentHealth / baseHealth;
     }

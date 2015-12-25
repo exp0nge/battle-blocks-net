@@ -48,8 +48,7 @@ namespace Utilities.Singleton
                         }
                         else
                         {
-                            Debug.Log("[Singleton] Instance created: " +
-                                _instance.gameObject.name);
+                            Debug.Log("[Singleton] Instance created: " + _instance.gameObject.name);
                         }
                     }
 
