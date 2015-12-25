@@ -161,7 +161,7 @@ Transform:
   - {fileID: 806299757}
   - {fileID: 587961161}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &197087014
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: Horizontal_1
+  m_VerticalAxis: Vertical_1
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -449,6 +449,30 @@ Prefab:
       propertyPath: playerTargets.Array.data[1]
       value: 
       objectReference: {fileID: 1640494513}
+    - target: {fileID: 454810, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 454810, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058734, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058734, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.33088237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058734, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.33088237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058734, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.33088237
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3089a3dd971ff0c42b5c70011ca9e0c7, type: 2}
   m_IsPrefabParent: 0
