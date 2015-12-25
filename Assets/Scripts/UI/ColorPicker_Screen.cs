@@ -32,18 +32,8 @@ public class ColorPicker_Screen : UI_Screen {
 
     protected override void Start() {
         base.Start();
-        // redValueP1 = GetColorRatio(GetSlider(redSlider));
-        // redValueP2 = GetColorRatio(GetSlider(redSliderP2));
-
-        // greenValueP1 = GetColorRatio(GetSlider(greenSlider));
-        // greenValueP2 = GetColorRatio(GetSlider(greenSliderP2));
-
-        // blueValueP1 = GetColorRatio(GetSlider(blueSlider));
-        // blueValueP2 = GetColorRatio(GetSlider(blueSliderP2));
-        
         SetSliderFill(redSlider, 255f);
-        SetSliderFill(blueSliderP2, 255f);
-        
+        SetSliderFill(blueSliderP2, 255f);   
     }
 
 
@@ -73,7 +63,7 @@ public class ColorPicker_Screen : UI_Screen {
         playerTwoMaterial.color = GetImage(imagePreviewP2).color;
     }
 
-    public float GetColorRatio(Slider slider) {
+    private float GetColorRatio(Slider slider) {
         return slider.value / 255f;
     }
 

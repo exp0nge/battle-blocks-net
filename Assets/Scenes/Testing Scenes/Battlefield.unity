@@ -353,6 +353,14 @@ Prefab:
       propertyPath: playerSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11414502, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550662, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13f8393aec5fac54688f464682bde31a, type: 2}
   m_IsPrefabParent: 0
@@ -706,47 +714,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 737943352}
   m_RootOrder: 0
---- !u!1 &1309734702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1309734703}
-  - 114: {fileID: 1309734704}
-  m_Layer: 0
-  m_Name: Color Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1309734703
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1309734702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1755584798}
-  m_RootOrder: 3
---- !u!114 &1309734704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1309734702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9379575a02f0841a6b657e56d446e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialPlayer1: {fileID: 2100000, guid: 2c864f0ac38b097418847d6c805fe9c1, type: 2}
-  materialPlayer2: {fileID: 2100000, guid: efc1b442fdff3164c9144f0db09b4e65, type: 2}
 --- !u!1001 &1570180337
 Prefab:
   m_ObjectHideFlags: 0
@@ -813,6 +780,14 @@ Prefab:
     - target: {fileID: 11464226, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
       propertyPath: playerSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464226, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580210, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8799c08914c84ae4f8710f161be71700, type: 2}
@@ -970,7 +945,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1755584798 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 485438, guid: b133b7e99d2a2f74f904407099a3fe3c, type: 2}
-  m_PrefabInternal: {fileID: 1755584797}

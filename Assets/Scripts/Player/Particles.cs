@@ -8,11 +8,6 @@ public class Particles : MonoBehaviour {
     public ParticleSystem hitParticles;
     private MovementStates mstate;
 
-    void Awake()
-    {
-
-    }
-
     void Update ()
     {
         mstate = GetComponent<Movement>().currentState;

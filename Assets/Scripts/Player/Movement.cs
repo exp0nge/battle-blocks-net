@@ -131,11 +131,9 @@ public class Movement : MonoBehaviour {
     /// of the Player's movement
     /// </summary>
     /// <returns>Returns a MovementState</returns>
-    public MovementStates getMovementState()
-    {
+    public MovementStates getMovementState() {
         return currentState;
     }
-
     #endregion
 
 }

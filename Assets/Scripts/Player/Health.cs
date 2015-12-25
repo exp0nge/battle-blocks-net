@@ -6,22 +6,12 @@ public class Health : MonoBehaviour {
     public float baseHealth = 100f;
     public ParticleSystem deathEffect;
     public Image healthHUD;
-    public GameObject endScreen;
-
-    #region Color
-    public Color mediumHealth;
-    public Color criticalHealth;
-    #endregion
 
     // Reference to the public field, baseHealth
     private float currentHealth;
 
     private void Awake() {
         currentHealth = baseHealth;
-    }
-
-    private void Start() {
-        
     }
 
     /// <summary>
@@ -36,7 +26,6 @@ public class Health : MonoBehaviour {
         if (currentHealth <= 0) {
             Instantiate(deathEffect, transform.position, Quaternion.Euler(270, 0, 0)); // instantiates and plays Explode 
             gameObject.SetActive(false);
-            endScreen.SetActive(true);
         }
         healthHUD.fillAmount = SetFillAmount();
         SetHealthColor();
@@ -64,9 +53,9 @@ public class Health : MonoBehaviour {
     /// </summary>
     private void SetHealthColor() {
         if (currentHealth <= 66 && currentHealth > 33)
-            healthHUD.color = mediumHealth;
+            healthHUD.color = Color.yellow;
         else if (currentHealth <= 33 && currentHealth > 0)
-            healthHUD.color = criticalHealth;
+            healthHUD.color = Color.red;
     }
 
     /// <summary>
