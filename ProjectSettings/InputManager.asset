@@ -58,7 +58,7 @@ InputManager:
     descriptiveName: Launches the player forward
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: right alt
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -218,7 +218,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: enter
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
