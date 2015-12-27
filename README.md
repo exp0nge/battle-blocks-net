@@ -7,6 +7,8 @@ Battle Blocks Royale is a local multi-player arena game developed by members of 
 ## How to set up the game?
 For now simply fork this repository and open the "Builds" Folder. The Builds folder has the latest stable releases.
 
+Or you can go to this [link](https://app.box.com/battle-blocks-royale), download the zip file, unzip it and run the InitialRelease.exe (Windows Version only!).
+
 ## Instructions [How to Play]
 
 Player 1            | Player 2
