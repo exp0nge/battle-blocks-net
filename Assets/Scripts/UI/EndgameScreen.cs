@@ -1,5 +1,7 @@
 using UnityEngine;
+#if UNITY_5_3
 using UnityEngine.SceneManagement;
+#endif
 using System.Collections;
 
 public class EndgameScreen : UI_Screen {
@@ -7,7 +9,7 @@ public class EndgameScreen : UI_Screen {
     protected override void Start() {
         base.Start();
     }
-
+#if UNITY_5_3
     /// <summary>
     /// Reloads the current level;
     /// </summary>
@@ -16,10 +18,11 @@ public class EndgameScreen : UI_Screen {
     }
     
     /// <summary>
-    /// 
+    /// Loads the main scene.
     /// </summary>
-    /// <param name="sceneIndex"></param>
+    /// <param name="sceneIndex">Scene to load.</param>
     public void ReturnToMainMenu(int sceneIndex) {
         SceneManager.LoadScene(sceneIndex);
     }
+#endif
 }

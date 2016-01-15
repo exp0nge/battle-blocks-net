@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+#if UNITY_5_3
 using UnityEngine.SceneManagement;
+#endif
 
 public class StartScreen : UI_Screen {
-
+#if UNITY_5_3
     /// <summary>
     /// Loads the next subsequent scene.
     /// </summary>
@@ -12,7 +14,7 @@ public class StartScreen : UI_Screen {
     {
         SceneManager.LoadScene(level);
     }
-
+#endif
     /// <summary>
     /// Close and exit the application.
     /// </summary>
