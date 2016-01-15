@@ -41,15 +41,18 @@ namespace Utilities.Singleton
                             singleton.name = "(singleton) " + typeof(T).ToString();
 
                             DontDestroyOnLoad(singleton);
-
+#if UNITY_EDITOR
                             Debug.Log("[Singleton] An instance of " + typeof(T) +
                                 " is needed in the scene, so '" + singleton +
                                 "' was created with DontDestroyOnLoad.");
+#endif
                         }
+#if UNITY_EDITOR
                         else
                         {
                             Debug.Log("[Singleton] Instance created: " + _instance.gameObject.name);
                         }
+#endif
                     }
 
                     return _instance;
