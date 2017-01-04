@@ -1,5 +1,8 @@
 # Battle Blocks Royale
 
+## Update
+This project has been reworked primarily by myself and [Claudia Yan](https://bitbucket.org/s1cyan/) and is no longer being updated.
+
 ## What is this repository for?
 
 Battle Blocks Royale is a local multi-player arena game developed by members of the ACM Unity Fall 2015 Gamedev team.
