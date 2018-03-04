@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 /// <summary>
 /// Enums are a collection of states that can be enumerated
@@ -26,7 +27,6 @@ public class Movement : MonoBehaviour {
     private float movementInput; // Stores the input values from Input.GetAxis("Vertical")
     private float rotationInput; // Stores the input values from Input.GetAxis("Horizontal")
     private float teleport = 1f;
-    private bool teleportCheck;
     private float teleportCooldown;
     private float dashCooldown;
 
@@ -56,8 +56,10 @@ public class Movement : MonoBehaviour {
     // Update is called once every frame
     private void Update() {
         //Store the values of Input.GetAxis
-        movementInput = Input.GetAxis(verticalMovement);
-        rotationInput = Input.GetAxis(horizontalMovement);
+        //movementInput = Input.GetAxis(verticalMovement);
+        //rotationInput = Input.GetAxis(horizontalMovement);
+        rotationInput = CrossPlatformInputManager.GetAxis(horizontalMovement);
+        movementInput = CrossPlatformInputManager.GetAxis(verticalMovement);
     }
 
 	// FixedUpdate() is used for physics calculation and runs every other frame
